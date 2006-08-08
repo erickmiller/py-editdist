@@ -21,6 +21,10 @@
 
 #include "Python.h"
 
+#if defined(_MSC_VER)
+typedef unsigned __int8 u_int8_t;
+#endif
+
 /* $Id$ */
 
 #ifndef MIN
@@ -112,5 +116,5 @@ initeditdist(void)
 	PyObject *m;
 
 	m = Py_InitModule3("editdist", editdist_methods, module_doc);
-	PyModule_AddStringConstant(m, "__version__", PROGVER);
+	PyModule_AddStringConstant(m, "__version__", "0.1");
 }

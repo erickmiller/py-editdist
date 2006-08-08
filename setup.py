@@ -23,7 +23,6 @@ VERSION = "0.1"
 
 if __name__ == '__main__':
 	editdist = Extension('editdist',
-		define_macros = [('PROGVER', '"' + VERSION + '"')],
 		sources = ['editdist.c'])
 	setup(	name = "editdist",
 		version = VERSION,
