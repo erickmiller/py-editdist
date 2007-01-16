@@ -1,4 +1,6 @@
-Optionally differen add/delete/change costs
+Optionally different add/delete/change costs
+
+Optional Damerau transposition operator
 
 Edit distances between more than two strings
 

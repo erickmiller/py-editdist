@@ -25,6 +25,8 @@
 typedef unsigned __int8 u_int8_t;
 #endif
 
+#define EDITDIST_VERSION	"0.2"
+
 /* $Id$ */
 
 #ifndef MIN
@@ -119,5 +121,5 @@ initeditdist(void)
 	PyObject *m;
 
 	m = Py_InitModule3("editdist", editdist_methods, module_doc);
-	PyModule_AddStringConstant(m, "__version__", "0.1");
+	PyModule_AddStringConstant(m, "__version__", EDITDIST_VERSION);
 }
