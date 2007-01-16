@@ -1,3 +1,7 @@
+20070116
+ - (djm) Properly initialise array to fix under counting of adds/changes;
+   spotted by Hamish Allan
+
 20060808
  - (djm) Build fixes for WIN32 with MSVC
 

@@ -58,6 +58,9 @@ edit_distance(const u_int8_t *a, size_t alen, const u_int8_t *b, size_t blen)
 		return (-1);
 	}
 
+	for (i = 0; i < alen + 1; i++)
+		previous[i] = i;
+
 	for (i = 1; i < blen + 1; i++) {
 		if (i > 1) {
 			memset(previous, 0, (alen + 1) * sizeof(*previous));

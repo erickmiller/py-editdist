@@ -30,6 +30,7 @@ test_vectors = [
 	[ '',		'',		0 ],
 	[ 'abc',	'acx',		2 ],
 	[ 'abc',	'acxx',		3 ],
+	[ 'abc',	'bcd',		2 ],
 ]
 
 def randstring(l):
