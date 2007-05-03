@@ -1,6 +1,6 @@
 Name: py-editdist
 Summary: CPython module to quickly calculate Levenshtein's edit distance
-Version: 0.2
+Version: 0.3
 Release: 1
 Source0: http://www2.mindrot.org/files/py-editdist/py-editdist-%{version}.tar.gz
 License: BSD

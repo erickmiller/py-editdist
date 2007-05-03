@@ -19,7 +19,7 @@
 import sys
 from distutils.core import setup, Extension
 
-VERSION = "0.2"
+VERSION = "0.3"
 
 if __name__ == '__main__':
 	editdist = Extension('editdist',

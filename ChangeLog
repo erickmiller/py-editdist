@@ -1,3 +1,9 @@
+20070504
+ - (djm) Fix type screwup that caused incorrect results for string pairs
+   with edit distance > CHAR_MAX; patch from gstupp AT cisco.com
+ - (djm) Regress test for long strings
+ - (djm) Tidy and crank versions for 0.3 release
+
 20070116
  - (djm) Properly initialise array to fix under counting of adds/changes;
    spotted by Hamish Allan

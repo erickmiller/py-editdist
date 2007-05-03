@@ -1,6 +1,6 @@
 Metadata-Version: 1.0
 Name: py-editdist
-Version: 0.2
+Version: 0.3
 Summary: Calculate Levenshtein edit distance between two strings
 Home-page: http://www.mindrot.org/py-editdist.html
 Author: Damien Miller

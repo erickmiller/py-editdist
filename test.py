@@ -20,18 +20,20 @@ import editdist
 import unittest
 import random
 
-test_vectors = [
-	[ 'abc',	'abc',		0 ],
-	[ 'abc',	'ab',		1 ],
-	[ 'abc',	'abcd',		1 ],
-	[ 'abc',	'bc',		1 ],
-	[ 'abc',	'a', 		2 ],
-	[ 'abc',	'', 		3 ],
-	[ '',		'',		0 ],
-	[ 'abc',	'acx',		2 ],
-	[ 'abc',	'acxx',		3 ],
-	[ 'abc',	'bcd',		2 ],
-]
+test_vectors = (
+	( 'abc',	'abc',		0 ),
+	( 'abc',	'ab',		1 ),
+	( 'abc',	'abcd',		1 ),
+	( 'abc',	'bc',		1 ),
+	( 'abc',	'a', 		2 ),
+	( 'abc',	'', 		3 ),
+	( '',		'',		0 ),
+	( 'abc',	'acx',		2 ),
+	( 'abc',	'acxx',		3 ),
+	( 'abc',	'bcd',		2 ),
+	( 'a' * 1000,	'a' * 1000,	0 ),
+	( 'a' * 1000,	'b' * 1000,	1000),
+)
 
 def randstring(l):
 	a = "abcdefghijklmnopqrstuvwxyz"
@@ -50,9 +52,12 @@ class TestRadix(unittest.TestCase):
 			self.assertEqual(editdist.distance(a, b), score)
 
 	def test_02__fuzz(self):
-		for i in range(0, 32):
+		for i in range(0, 32) + range(128, 1024, 128):
 			for j in range(0, 32):
-				editdist.distance(randstring(i), randstring(j))
+				a = randstring(i)
+				b = randstring(j)
+				dist = editdist.distance(a, b)
+				self.assert_(dist >= 0)
 
 def main():
 	unittest.main()

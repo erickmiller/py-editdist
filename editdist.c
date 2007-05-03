@@ -25,7 +25,7 @@
 typedef unsigned __int8 u_int8_t;
 #endif
 
-#define EDITDIST_VERSION	"0.2"
+#define EDITDIST_VERSION	"0.3"
 
 /* $Id$ */
 
@@ -36,9 +36,9 @@ typedef unsigned __int8 u_int8_t;
 static int
 edit_distance(const u_int8_t *a, size_t alen, const u_int8_t *b, size_t blen)
 {
-	size_t tmplen, i, j, r;
+	size_t tmplen, i, j;
 	const u_int8_t *tmp;
-	int *current, *previous, *tmpl, add, del, chg;
+	int *current, *previous, *tmpl, add, del, chg, r;
 
 	/* Swap to reduce worst-case memory requirement */
 	if (alen > blen) {
@@ -94,8 +94,8 @@ PyDoc_STRVAR(editdist_distance_doc,
 static PyObject *
 editdist_distance(PyObject *self, PyObject *args)
 {
-	char *a, *b, r;
-	int alen, blen;
+	char *a, *b;
+	int alen, blen, r;
 
 	if (!PyArg_ParseTuple(args, "s#s#", &a, &alen, &b, &blen))
                 return NULL;
